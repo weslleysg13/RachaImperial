@@ -1,0 +1,226 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racha Imperial</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> 
+</head>
+<body>
+    <div style="display: inline"> 
+        <nav>
+            <a href="/"><img src="{% static 'images/Racha Imperial.png' %}" width="120px" length="120px"></a>
+            <a href="/"><u>Início</u></a>
+            <!--<a href="serie"><u>Série</u></a>-->
+            <h1 style="display:inline-block; width:78%" Align="center">ESTATÍSTICAS</h1>
+        </nav>
+    </div>
+    <hr style="margin: 0 auto" />
+    <div Align="center">
+        <div style="display: inline-table">
+            <table style="margin: 25px" width="250" border="1">
+                <caption><h2 style="margin: 8px">Artilharia</h2></caption>  
+                    {% for atleta in artilheiros %}
+                        {% if atleta.gols > 0 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.gols }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+        </div>
+        <div style="display: inline-table">
+            <table style="margin: 25px" width="250" border="1">
+                <caption><h2 style="margin: 8px">Assistentes</h2></caption>  
+                    {% for atleta in assistentes %}
+                        {% if atleta.assistencias > 0 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.assistencias }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+        </div>
+        <div style="display: inline-table">
+            <table style="margin: 25px" width="250" border="1">
+                <caption><h2 style="margin: 8px">Vitoriosos</h2></caption>  
+                    {% for atleta in vitorias %}
+                        {% if atleta.vitorias > 0 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.vitorias }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div Align="center">
+        <div style="display: inline-table">
+            <table style="margin: 25px" width="250" border="1">
+                <caption><h2 style="margin: 8px">Amarelados</h2></caption>  
+                    {% for atleta in amarelados %}
+                        {% if atleta.amarelos > 0 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.amarelos }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+        </div>
+        <div style="display: inline-table"> 
+            <table style="margin: 25px" width="250" border="1">
+                <caption><h2 style="margin: 8px">Expulsos</h2></caption>  
+                    {% for atleta in expulsos %}
+                        {% if atleta.vermelhos > 0 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.vermelhos }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+        </div>
+        <div style="display: inline-table">
+            <table style="margin: 25px" width="250" border="1">
+                <caption><h2 style="margin: 8px">Puskas</h2></caption>  
+                    {% for atleta in puskas %}
+                        {% if atleta.puskas > 0 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.puskas }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+        </div>
+    </div> 
+    <div Align="center">
+        <div style="display: inline-table">
+            <table style="margin: 25px" width="250" border="1">
+                <caption><h2 style="margin: 8px">Deivids</h2></caption>  
+                    {% for atleta in deivids %}
+                        {% if atleta.deivid > 0 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.deivid }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+        </div>
+        <div style="display: inline-table">
+            <table style="margin: 25px" width="250" border="1">
+                <caption><h2 style="margin: 8px">Bola Cheias</h2></caption>  
+                    {% for atleta in cheias %}
+                        {% if atleta.bolaCheia > 0 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.bolaCheia }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+        </div>
+        <div style="display: inline-table">
+            <table style="margin: 25px" width="250" border="1">
+                <caption><h2 style="margin: 8px">Bola Murchas</h2></caption>  
+                    {% for atleta in murchas %}
+                        {% if atleta.bolaMurcha > 0 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.bolaMurcha }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

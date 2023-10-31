@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racha Imperial</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> 
+</head>
+<body>
+    <div style="display: inline">
+        <nav>
+            <a href="/"><img src="{% static 'images/Racha Imperial.png' %}" width="120px" length="120px"></a>
+            <a href="/"><u>Início</u></a>
+            <!--<a href="serie"><u>Série</u></a>-->
+            <a href="estatisticas"><u>Estatísticas</u></a>
+            <h1 style="display:inline-block; width:64%" Align="center">Placar da Série<br />2 x 2</h1>
+            <hr style="margin: 0 auto">
+        </nav>
+    </div>
+    <center>
+        <div>
+            <h2 style="margin: 6px">Última Partida</h2>
+                <img src="{% static 'images/UltimaPartida.png' %}" width="500px" length="500px">
+            <table Align="left" style="margin: 80px" width="250" border="1">
+                <caption><h3 style="margin: 8px">Artilharia</h3></caption>  
+                    {% for atleta in artilheiros %}
+                        {% if forloop.counter <= 7 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.gols }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+            <!-- ---------------------------------------------------------------------- -->
+            <table Align="right" style="margin: 80px" width="250" border="1">
+                <caption><h3 style="margin: 8px">Líderes em Assistências</h3></caption>
+                    {% for atleta in assistentes %}
+                        {% if forloop.counter <= 7 %}
+                            <tr>
+                                <th>
+                                        {{ forloop.counter }}
+                                </th>
+                                <th>
+                                        {{ atleta.nome }}
+                                </th>
+                                <td>
+                                    <center>
+                                        {{ atleta.assistencias }}
+                                    </center>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+            </table>
+        </div>
+        <hr>    
+    <!-- ---------------------------------------------------------------------- -->
+    <center>
+        <table width="250" border="1">
+            <caption>Quadro de Administradores do Racha</caption>  
+            <thead>  
+                <tr>
+                    <th>
+                        Presidente
+                    </th>
+                    <th>
+                        Mensalidades
+                    </th>
+                    <th>
+                        Confraternização
+                    </th>
+                    <th>
+                        Cartões
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td>
+                        <center>
+                            Gabriel S
+                        </center>
+                    </td>
+                    <td>
+                        <center>
+                            Albino
+                        </center>
+                    </td>
+                    <td>
+                        <center>
+                            Kenedy
+                        </center>
+                    </td>
+                    <td>
+                        <center>
+                            Thayrone
+                        </center>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
