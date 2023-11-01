@@ -1,0 +1,1 @@
+web: gunicorn novotcc.wsgi --log-file -
